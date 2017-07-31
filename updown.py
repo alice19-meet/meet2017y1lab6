@@ -15,25 +15,53 @@ def up():
     global direction
     direction=UP
     print('you pressed up')
-    return direction
+    turtle.pos()
+    old_pos=turtle.pos()
+    x=old_pos[0]
+    y=old_pos[1]
+    turtle.goto(x,y+10)
+    print(turtle.pos())
+    
 
 def down():
     global direction
     direction=DOWN
     print('you pressed down')
-    return direction
+    turtle.pos()
+    old_pos=turtle.pos()
+    x=old_pos[0]
+    y=old_pos[1]
+    turtle.goto(x,y-10)
+    print(turtle.pos())
 
 def left():
     global direction
     direction=LEFT
     print('you pressed left')
-    return direction
+    turtle.pos()
+    old_pos=turtle.pos()
+    x=old_pos[0]
+    y=old_pos[1]
+    turtle.goto(x-10,y)
+    print(turtle.pos())
 
 def right():
     global direction
     direction=RIGHT
     print('you pressed right')
-    return direction 
+    turtle.pos()
+    old_pos=turtle.pos()
+    x=old_pos[0]
+    y=old_pos[1]
+    turtle.goto(x+10,y)
+    print(turtle.pos())
+
+turtle.onkeypress(up,UP_ARROW)
+turtle.onkeypress(down,DOWN_ARROW)
+turtle.onkeypress(left,LEFT_ARROW)
+turtle.onkeypress(right,RIGHT_ARROW)
+turtle.onkeypress(turtle.stamp,SPACEBAR)
+turtle.listen()
 
 turtle.mainloop()
 
